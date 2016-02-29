@@ -1,5 +1,6 @@
 import React from "react"
 import Model from "./Model.js"
+import './TodoStyle.css'
 
 export default class TodoList extends React.Component {
   constructor(){
@@ -11,9 +12,15 @@ export default class TodoList extends React.Component {
   }
 
   render(){
+
+    var style = {
+      margin: 10
+    };
+
     return (
-      <li onClick = {this.handleClick.bind(this)}>
+      <li style = {{style}}>
         {this.props.text}
+        <button onClick = {this.handleClick.bind(this)}>X</button>
       </li>
     )
   }
